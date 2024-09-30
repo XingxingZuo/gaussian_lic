@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Gaussian-LIC: Real-Time Photo-Realistic SLAM with Gaussian Splatting and LiDAR-Inertial-Camera Fusion">
+    <meta name="keywords" content="Photo-Realistic SLAM, 3D Gaussian Splatting, LiDAR-Inertial-Camera Fusion">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gaussian-LIC: Real-Time Photo-Realistic SLAM with Gaussian Splatting and LiDAR-Inertial-Camera Fusion</title>
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L6PYDPEBZZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      gtag('js', new Date());
+
+      gtag('config', 'G-L6PYDPEBZZ');
+    </script>
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+    <script src="./static/js/video_comparison.js"></script>
+  </head>
+  <body>
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+        <a class="navbar-item" href="https://xingxingzuo.github.io">
+        <span class="icon">
+            <i class="fas fa-home"></i>
+        </span>
+        </a>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            More Research
+          </a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://xingxingzuo.github.io/fmgs">
+              FMGS
+            </a>
+            <a class="navbar-item" href="https://yingyexin.github.io/simplemapping.html">
+              SimpleMapping
+            </a>
+            <a class="navbar-item" href="https://shengyuh.github.io/dynfl">
+              DyNFL
+            <a class="navbar-item" href="https://xingxingzuo.github.io/nerfvo">
+              NerfVO
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title">Gaussian-LIC: Real-Time Photo-Realistic SLAM with Gaussian Splatting and LiDAR-Inertial-Camera Fusion
+              </h1>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">
+                <a href="https://github.com/Jerry-locker/" target="_blank">Xiaolei Lang</a><sup>1</sup>,</span>
+                <span class="author-block">
+                <a href="https://github.com/yzdad/" target="_blank">Laijian Li</a><sup>1</sup>,</span>
+                <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=eOkkQWUAAAAJ&hl=en&oi=ao" target="_blank">Chenming Wu</a><sup>2</sup>,</span>
+                <span class="author-block">
+                <a href="https://openreview.net/profile?id=~Chen_Zhao9" target="_blank">Chen Zhao</a><sup>2</sup>,</span>
+                <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=Mozc1JEAAAAJ&hl=zh-CN&oi=ao" target="_blank">Lina Liu</a><sup>1</sup>,</span>
+                <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=qYcgBbEAAAAJ&hl=zh-CN" target="_blank">Yong Liu</a><sup>1</sup>,</span>
+                <span class="author-block">
+                <a href="https://github.com/icameling" target="_blank">Jiajun Lv</a><sup>1</sup>,</span>
+                <span class="author-block">
+                <a href="https://xingxingzuo.github.io/" target="_blank">Xingxing Zuo</a><sup>3</sup>
+                </span>
+              </div>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block"><sup>1</sup>Zhejiang University,</span>
+                <span class="author-block"><sup>2</sup>Baidu VIS,</span>
+                <span class="author-block"><sup>3</sup>Technical University of Munich</span>
+              </div>
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2404.06926"
+                    class="external-link button is-normal is-rounded is-dark" target="_blank">
+                  <span class="icon">
+                  <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                  </a>
+                  </span>
+                  <span class="link-block">
+                  <a href="https://arxiv.org/abs/2404.06926v2" class="external-link button is-normal is-rounded is-dark"
+                    target="_blank">
+                  <span class="icon">
+                  <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                  </a>
+                  </span>
+                  <span class="link-block">
+                  <a href="https://github.com/APRIL-ZJU/Gaussian-LIC"
+                    class="external-link button is-normal is-rounded is-dark" target="_blank">
+                  <span class="icon">
+                  <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>
+                In this paper, we present a real-time photo-realistic SLAM method based on marrying Gaussian Splatting with LiDAR-Inertial-Camera SLAM. Most existing radiance-field-based SLAM systems mainly focus on bounded indoor environments, equipped with RGB-D or RGB sensors. However, they are prone to decline when expanding to unbounded scenes or encountering adverse conditions, such as violent motions and changing illumination. In contrast, oriented to general scenarios, our approach additionally tightly fuses LiDAR, IMU, and camera for robust pose estimation and photo-realistic online mapping. To compensate for regions unobserved by the LiDAR, we propose to integrate both the triangulated visual points from images and LiDAR points for initializing 3D Gaussians. In addition, the modeling of the sky and varying camera exposure have been realized for high-quality rendering. Notably, we implement our system purely with C++ and CUDA, and meticulously design a series of strategies to accelerate the online optimization of the Gaussian-based scene representation. Extensive experiments demonstrate that our method outperforms its counterparts while maintaining real-time capability. Impressively, regarding photo-realistic mapping, our method with our estimated poses even surpasses all compared methods that utilize privileged ground-truth poses for mapping.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full-width">
+            <h2 class="title is-3" style="margin-top: -20px">Method</h2>
+            <img src="./static/images/gaussian-lic.png" class="center">
+            <div class="content has-text-justified">
+              <p style="margin-top: 30px">
+                <b>Gaussian-LIC</b> consists of a tracking module and a mapping module powered by the carefully designed acceleration strategies for real-time performance. The former tightly couples multimodal sensory data to deliver robust and accurate pose estimation, outputting geometrically precise colorized LiDAR points with triangulated SFM points for compensation. The latter receives the sequential data from the former and incrementally reconstructs a Gaussian map, where the sky and the varying camera exposure are both properly modeled for better visual quality. 
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full-width">
+            <h2 class="title is-3" style="margin-top: -20px">Experimental Results</h2>
+            <img src="./static/images/rendering.png" class="center">
+            <div class="content has-text-justified">
+              <p style="margin-top: 30px">
+                <b>Qualitative rendering performance.</b> Now that all compared methods badly estimate poses in complex unbounded scenarios, we run them with ground truth poses so as to fairly compare the photo-realistic mapping performance.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="BibTeX">
+      <div class="container is-max-desktop content">
+        <h2 class="title">BibTeX</h2>
+        <pre><code>@article{lang2024gaussian,
+  author={Lang, Xiaolei and Li, Laijian and Wu, Chenming and Zhao, Chen and Liu, Lina and Liu, Yong and Lv, Jiajun and Zuo, Xingxing},
+  journal={arXiv preprint arXiv:2404.06926}, 
+  title={Gaussian-LIC: Real-Time Photo-Realistic SLAM with Gaussian Splatting and LiDAR-Inertial-Camera Fusion}, 
+  year={2024}
+}</code></pre>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <div class="content">
+              <p>
+                This website is licensed under a <a rel="license"
+                  href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+              </p>
+              <p>
+                This website template is from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>. 
+                We sincerely thank <a href="https://keunhong.com/">Keunhong Park</a> for developing and open-sourcing this template. 
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
